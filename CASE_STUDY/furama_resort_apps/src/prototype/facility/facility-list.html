@@ -5,61 +5,40 @@
     <title>Title</title>
 </head>
 <body>
-<h2>THÊM MỚI DỊCH VỤ</h2>
-<div class="d-flex justify-content-center mt-3">
-    <form>
-        <div class="mb-3">
-            <label for="name" class="form-label">Họ và tên: </label>
-            <input type="text" class="form-control" id="name" aria-describedby="name">
-        </div>
-        <div class="mb-3">
-            <label for="dateOfBirth" class="form-label">Ngày sinh </label>
-            <input type="date" class="form-control" id="dateOfBirth" aria-describedby="dateOfBirth">
-        </div>
-        <div class="mb-3">
-            <label for="gender" class="form-label">Giới tính</label>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="gender">
-                <label class="form-check-label" for="gender">
-                    Nam
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="gender1" checked>
-                <label class="form-check-label" for="gender1">
-                    Nữ
-                </label>
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="idCard" class="form-label">Số CMND</label>
-            <input type="text" class="form-control" id="idCard">
-        </div>
-        <div class="mb-3">
-            <label for="phoneNumber" class="form-label">Số điện thoại:</label>
-            <input type="text" class="form-control" id="phoneNumber">
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="text" class="form-control" id="email">
-        </div>
-        <div class="mb-3">
-            <label for="address" class="form-label">Địa chỉ:</label>
-            <input type="text" class="form-control" id="address">
-        </div>
-        <div class="mb-3">
-            <label class="fs-5" for="">Loại khách: </label>
-            <select class="form-select" aria-label="Default select example">
-                <option value="">Diamond</option>
-                <option value="">Platinium</option>
-                <option value="">Gold</option>
-                <option value="">Silver</option>
-                <option value="">Member</option>
-            </select>
-        </div>
+<h2 class="text-center fw-bold my-3">DANH SÁCH DỊCH VỤ</h2>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+<table class="table table-bordered">
+    <tr>
+        <th class="text-center">#</th>
+        <th>Tên dịch vụ</th>
+        <th>Diện tích (m<sup>2</sup>)</th>
+        <th>Chi phí thuê</th>
+        <th>Dịch vụ miễn phí đi kèm</th>
+        <th>Số người tối đa</th>
+        <th>Số tầng</th>
+        <th>Mô tả tiện nghi khác</th>
+        <th>Diện tích hồ bơi</th>
+        <th>Loại phòng</th>
+        <th>Loại dịch vụ</th>
+        <th>Kiểu thuê</th>
+        <th class="text-center">Sửa</th>
+        <th class="text-center">Xóa</th>
+    </tr>
+
+    <tr *ngFor="let item of facilities;index as i ">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
 </body>
 </html>

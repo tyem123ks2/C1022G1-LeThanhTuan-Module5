@@ -23,15 +23,15 @@
         </tr>
 
         <tr *ngFor="let item of customers; index as i">
-            <td>{{i + 1}}</td>
-            <td>{{item.name}}</td>
-            <td>{{item.gender}}</td>
-            <td>{{item.dayOfBirth}}</td>
-            <td>{{item.idCard}}</td>
-            <td>{{item.phoneNumber}}</td>
-            <td>{{item.email}}</td>
-            <td>{{item.address}}</td>
-            <td>{{item.customerType.name}}</td>
+            <td>1</td>
+            <td>Tuấn</td>
+            <td>Nam</td>
+            <td>10/11/1998</td>
+            <td>197434279</td>
+            <td>0359066333</td>
+            <td>thanhtuan12773@yahoo.com.vn</td>
+            <td>Khe Sanh</td>
+            <td>Diamond</td>
             <td class="text-center">
                 <button>Sửa</button>
             </td>
@@ -53,7 +53,7 @@
             </div>
             <div class="modal-body">
                 <span>Bạn có muốn xoá khách hàng: </span><span
-                    style="color: red">{{removeCustomer.name}}</span><span>  ?</span>
+                    style="color: red">Tuấn</span><span>?</span>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
