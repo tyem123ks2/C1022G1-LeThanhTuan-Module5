@@ -4,22 +4,87 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../style_mod.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="themify-icons/themify-icons.css">
 </head>
 <body>
-<!--<div id="container">-->
-    <div class="navbar">
-        <img src="../../../image/pngwing.11com.png" class="logo">
-        <a style="color: #cccccc; text-transform: uppercase; font-size: 22px">Furama Resort</a>
-        <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Customer</a></li>
-                <li><a href="">Service</a></li>
-                <li><a href="">Contract</a></li>
-            </ul>
-        </nav>
-        <img src="../../../image/pngwing.com.png" class="menu-icon"/>
-    </div>
-</div>
+<header>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #000000;">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-4" href="#">
+                <img src="../../../image/20220621154454120_furama.png"
+                     height="80" width="190px"/>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-3">
+                        <a class="nav-link active text-white" aria-current="page" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item mx-3 dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Giới thiệu
+                        </a>
+<!--                        <ul class="dropdown-menu">-->
+<!--                            <li><a class="dropdown-item" href="#">Giới thiệu</a></li>-->
+<!--                            <li><a class="dropdown-item" href="#">Loại phòng</a></li>-->
+<!--                            <li><a class="dropdown-item" href="#">Ẩm thực</a></li>-->
+<!--                            <li><a class="dropdown-item" href="#">Sự kiện</a></li>-->
+<!--                            <li><a class="dropdown-item" href="#">Giải trí</a></li>-->
+<!--                            &lt;!&ndash; <li><hr class="dropdown-divider"></li>-->
+<!--                            <li><a class="dropdown-item" href="#">Something else here</a></li> &ndash;&gt;-->
+<!--                        </ul>-->
+                    </li>
+                    <li class="nav-item mx-3 dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Loại phòng
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">VIP</a></li>
+                            <li><a class="dropdown-item" href="#">Thường</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link text-white" href="#">Ẩm thực</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link text-white" href="#">Sự kiện</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link text-white" href="#">Chức năng</a>
+                    </li>
+                </ul>
+
+                <form class="d-flex" role="search" onsubmit="">
+                    <input id="idSearch" class="form-control me-3 rounded-pill" style="padding-left: 40px"
+                           type="search" placeholder="Tìm kiếm..." aria-label="Search"><i class="ti-search"></i>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item mx-2">
+                            <a style="width: 95px;" href="#" class="nav-link active login text-nav box-shadow-login"
+                               aria-current="page">Đăng nhập</a>
+                        </li>
+                        <span style="margin-right: 13px; font-size: 25px;">|</span>
+                        <li class="nav-item me-5">
+                            <a style="width: 74px;" class="nav-link active register box-shadow-login"
+                               aria-current="page" href="#">Đăng ký</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
 </html>
