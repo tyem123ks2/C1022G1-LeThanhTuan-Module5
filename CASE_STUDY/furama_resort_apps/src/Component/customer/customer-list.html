@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="p-3">
+    <h2 class="text-center fw-bold my-3">DANH SÁCH KHÁCH HÀNG</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th class="text-center">#</th>
+            <th>Tên khách hàng</th>
+            <th>Giới tính</th>
+            <th>Ngày sinh</th>
+            <th>Số CMND/CCCD</th>
+            <th>SĐT</th>
+            <th>Email</th>
+            <th>Địa chỉ</th>
+            <th>Loại khách</th>
+            <th class="text-center">Sửa</th>
+            <th class="text-center">Xóa</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Tuấn</td>
+            <td>Nam</td>
+            <td>10/11/1998</td>
+            <td>197434279</td>
+            <td>0359066333</td>
+            <td>thanhtuan12773@yahoo.com.vn</td>
+            <td>Khe Sanh</td>
+            <td>Diamond</td>
+            <td class="text-center">
+                <button>Sửa</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Xoá
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Xoá khách hàng</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <span>Bạn có muốn xoá khách hàng: </span><span
+                    style="color: red">Tuấn</span><span>?</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" data-bs-dismiss="modal" class="btn btn-danger">Xóa</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
