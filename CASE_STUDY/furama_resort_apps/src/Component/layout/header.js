@@ -59,9 +59,8 @@ class Header extends Component{
                             <form className="d-flex" role="search" onSubmit="">
                                 <input id="idSearch" className="form-control me-3 rounded-pill"
                                        style="padding-left: 40px"
-                                       type="search" placeholder="Tìm kiếm..." aria-label="Search"><i
-                                    className="ti-search"></i>
-                                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                                       type="search" placeholder="Tìm kiếm..." aria-label="Search">
+                                    <ul className = "navbar-nav me-auto mb-2 mb-lg-0">
                                         <li className="nav-item mx-2">
                                             <a style="width: 95px;" href="#"
                                                className="nav-link active login text-nav box-shadow-login"
@@ -74,6 +73,7 @@ class Header extends Component{
                                                aria-current="page" href="#">Đăng ký</a>
                                         </li>
                                     </ul>
+                                </input>
                             </form>
                         </div>
                     </div>
@@ -82,4 +82,4 @@ class Header extends Component{
         );
     }
 }
-
+export default Header;
