@@ -1,16 +1,15 @@
 import {Component} from 'react';
 
-class facilityEdit extends Component {
+class FacilityEdit extends Component {
     render() {
         return (
-            <>
-            <form className="w-50 border border-2 border-success p-3 rounded"></form>
+            <form className="w-50 border border-2 border-success p-3 rounded">
             <div className="form-group">
                 <label htmlFor="name" style="font-weight: bold">Tên:</label>
                 <div className="input-group">
                     <input type="text" id="name" className="form-control" placeholder="Nhập tên"
-                           name="name">
-                        <span className="input-group-text"></span>
+                           name="name"/>
+                    <span className="input-group-text"></span>
                 </div>
             </div>
 
@@ -18,8 +17,8 @@ class facilityEdit extends Component {
                 <label htmlFor="area" style="font-weight: bold">Diện tích:</label>
                 <div className="input-group">
                     <input type="text" id="area" className="form-control" placeholder="Nhập diện tích"
-                           name="area">
-                        <span className="input-group-text"></span>
+                           name="area"/>
+                    <span className="input-group-text"></span>
                 </div>
             </div>
 
@@ -27,8 +26,8 @@ class facilityEdit extends Component {
                 <label htmlFor="cost" style="font-weight: bold">Giá tiền:</label>
                 <div className="input-group">
                     <input type="text" id="cost" className="form-control" placeholder="Nhập giá tiền"
-                           name="cost">
-                        <span className="input-group-text"></span>
+                           name="cost"/>
+                    <span className="input-group-text"></span>
                 </div>
             </div>
 
@@ -38,8 +37,8 @@ class facilityEdit extends Component {
                 <div className="input-group">
                     <input type="text" id="maxPeople" className="form-control"
                            placeholder="Nhập số người tối đa"
-                           name="maxPeople">
-                        <span className="input-group-text"></span>
+                           name="maxPeople"/>
+                    <span className="input-group-text"></span>
                 </div>
             </div>
 
@@ -48,8 +47,8 @@ class facilityEdit extends Component {
                 <div className="input-group">
                     <input type="text" id="standardRoom" className="form-control"
                            placeholder="Tiêu chuẩn phòng"
-                           name="standardRoom">
-                        <span className="input-group-text"></span>
+                           name="standardRoom"/>
+                    <span className="input-group-text"></span>
                 </div>
             </div>
 
@@ -58,8 +57,8 @@ class facilityEdit extends Component {
                 <div className="input-group">
                     <input type="text" id="descriptionOtherConvenience" className="form-control"
                            placeholder="Nhập mô tả"
-                           name="descriptionOtherConvenience">
-                        <span className="input-group-text"></span>
+                           name="descriptionOtherConvenience"/>
+                    <span className="input-group-text"></span>
                 </div>
             </div>
 
@@ -68,8 +67,8 @@ class facilityEdit extends Component {
                 <div className="input-group">
                     <input type="text" id="poolArea" className="form-control"
                            placeholder="Nhập diện tích hồ bơi"
-                           name="poolArea">
-                        <span className="input-group-text"></span>
+                           name="poolArea"/>
+                    <span className="input-group-text"></span>
                 </div>
             </div>
 
@@ -78,8 +77,8 @@ class facilityEdit extends Component {
                 <div className="input-group">
                     <input type="text" id="numberOfFloors" className="form-control"
                            placeholder="Nhập số tầng"
-                           name="numberOfFloors">
-                        <span className="input-group-text"></span>
+                           name="numberOfFloors"/>
+                    <span className="input-group-text"></span>
                 </div>
             </div>
 
@@ -88,8 +87,8 @@ class facilityEdit extends Component {
                 <div className="input-group">
                     <input type="text" id="facilityFree" className="form-control"
                            placeholder="Nhập dịch vụ miễn phí"
-                           name="facilityFree">
-                        <span className="input-group-text"></span>
+                           name="facilityFree"/>
+                    <span className="input-group-text"></span>
                 </div>
             </div>
 
@@ -121,8 +120,9 @@ class facilityEdit extends Component {
                 </button>
             </div>
             </form>
-        </>
-    );
-    }}
+        );
+    }
+}
+export default FacilityEdit;
 
-export default FacilityEdit
+
