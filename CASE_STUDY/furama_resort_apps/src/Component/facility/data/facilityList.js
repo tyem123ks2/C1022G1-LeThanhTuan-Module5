@@ -6,10 +6,10 @@ export const facility = [
         cost: 100000,
         maxPeople: 4,
         standardRoom: 'Vip',
-        descriptionOtherCovenience: 'ổn',
+        descriptionOtherCovenience: 'Karaoke',
         poolArea: 5,
         numberOfFloors: 5,
-        facilityFree: "đèn mờ",
+        facilityFree: "???",
         rentType: {
             id: 1,
             name: 'Villa'
