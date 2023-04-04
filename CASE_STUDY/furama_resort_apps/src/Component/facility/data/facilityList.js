@@ -12,7 +12,7 @@ export const facility = [
         facilityFree: "đèn mờ",
         rentType: {
             id: 1,
-            name: '?'
+            name: 'Villa'
         },
         facilityType: {
             id: 1,
@@ -43,11 +43,15 @@ export const facilityType = [
 export const rentType = [
     {
         id: 1,
-        name: '?'
+        name: 'Villa'
     },
     {
-        id: 1,
-        name: '??'
+        id: 2,
+        name: 'House'
+    },
+    {
+        id: 3,
+        name: 'Phòng'
     }
 
 ]
