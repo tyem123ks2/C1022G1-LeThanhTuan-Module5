@@ -97,7 +97,7 @@ function FormHealth() {
                         <div className='mb-3'>
                             <label htmlFor='humanCompany' className='form-label'>Công ty làm việc</label>
                             <Field type='text' className='form-control' id='humanCompany'
-                                   name='country'
+                                   name='company'
                             />
                             <ErrorMessage name='country' component='span' className='form-err'/>
                         </div>
@@ -106,7 +106,7 @@ function FormHealth() {
                             <Field type='text' className='form-control' id='humanPosition'
                                    name='position'
                             />
-                            <ErrorMessage name='humanPosition' component='span' className='form-err'/>
+                            <ErrorMessage name='position' component='span' className='form-err'/>
                         </div>
                         <div className='mb-3'>
                             <label htmlFor='humanHealthCard' className='form-label'>Có thẻ bảo hiểm y tế</label>
