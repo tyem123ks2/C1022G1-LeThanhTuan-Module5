@@ -119,9 +119,7 @@ class FacilityList extends Component {
                         <tr>
                             <th className="text-center">#</th>
                             <th>Tên dịch vụ</th>
-                            <th>
-                                Diện tích (m<sup>2</sup>)
-                            </th>
+                            <th>Diện tích (m<sup>2</sup>)</th>
                             <th>Chi phí thuê</th>
                             <th>Dịch vụ miễn phí đi kèm</th>
                             <th>Số người tối đa</th>
