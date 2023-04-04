@@ -104,7 +104,7 @@ function FormHealth() {
                         <div className='mb-3'>
                             <label htmlFor='humanPosition' className='form-label'>Vị trí làm việc</label>
                             <Field type='text' className='form-control' id='humanPosition'
-                                   name='country'
+                                   name='position'
                             />
                             <ErrorMessage name='humanPosition' component='span' className='form-err'/>
                         </div>
