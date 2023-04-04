@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from "./Component/layout/header";
 import FacilityList from "./Component/facility/facility-list";
 import Footer from "./Component/layout/footer";
+import React from "react";
 
 function App() {
   return (
