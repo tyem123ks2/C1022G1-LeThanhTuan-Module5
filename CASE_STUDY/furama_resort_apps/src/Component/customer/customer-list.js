@@ -1,4 +1,5 @@
 import {Component} from "react";
+import {customer} from "./data/customerList";
 
 class CustomerList extends Component {
     render() {
@@ -115,7 +116,7 @@ class CustomerList extends Component {
                 <div className="p-3">
                     <h2 className="text-center fw-bold my-3">DANH SÁCH KHÁCH HÀNG</h2>
                     <table className="table table-bordered">
-                        <tbody>
+                        <thead>
                         <tr>
                             <th className="text-center">STT</th>
                             <th>Tên khách hàng</th>
@@ -129,30 +130,32 @@ class CustomerList extends Component {
                             <th className="text-center">Sửa</th>
                             <th className="text-center">Xóa</th>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Tuấn</td>
-                            <td>Nam</td>
-                            <td>10/11/1998</td>
-                            <td>197434279</td>
-                            <td>0359066333</td>
-                            <td>thanhtuan12773@yahoo.com.vn</td>
-                            <td>Khe Sanh</td>
-                            <td>Diamond</td>
-                            <td className="text-center">
-                                <button>Sửa</button>
-                            </td>
-                            <td>
-                                <button
-                                    type="button"
-                                    className="btn btn-outline-danger"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal"
-                                >
-                                    Xoá
-                                </button>
-                            </td>
-                        </tr>
+                        </thead>
+                        <tbody>
+                        {
+                            customer.map((value, index) => (
+                                    <tr key={index}>
+                                        <td>{index}</td>
+                                        <td>{value.name}</td>
+                                        <td>{value.gender}</td>
+                                        <td>{value.dateOfBirth}</td>
+                                        <td>{value.idCard}</td>
+                                        <td>{value.phone}</td>
+                                        <td>{value.email}</td>
+                                        <td>{value.address}</td>
+                                        <td>{value.customerType.name}</td>
+                                        <td>
+                                            <button type='button' className='btn btn-warning ms2'
+                                            >Edit
+                                            </button>
+                                        </td>
+                                        <td>
+                                            <button type='button' className='btn btn-danger'>Delete</button>
+                                        </td>
+                                    </tr>
+                                )
+                            )
+                        }
                         </tbody>
                     </table>
                 </div>
