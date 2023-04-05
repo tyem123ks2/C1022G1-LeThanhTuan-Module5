@@ -12,8 +12,8 @@ function App() {
             <Routes>
                 <Route path='/' element={<ShowList/>}/>
                 <Route path='/add' element={<Add/>}/>
-                {/*<Route path='/edit/:id'*/}
-                {/*       element={<Edit/>}*/}
+                <Route path='/edit/:id'
+                       element={<Edit/>}
                 />
             </Routes>
             <ToastContainer/>
