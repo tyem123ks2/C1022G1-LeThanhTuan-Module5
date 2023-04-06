@@ -1,63 +1,100 @@
-import {Component} from 'react';
+import React from "react";
+import {Link, NavLink, Route, Routes} from 'react-router-dom';
+import Customer from "../customer/Customer";
+import Navbar from "./Navbar";
+function Home() {
+    return (
+        <>
+            <div className="row" style={{background: "#046056", height: 60, textAlign: "center"}}>
+                <nav className="navbar navbar-expand-lg" style={{background: "#046056"}}>
+                    <div className="collapse navbar-collapse container-fluid" id="navbarNavAltMarkup">
+                        <div className="col-lg-1"/>
+                        <div className="navbar-nav col-lg-8">
+                            <div>
+                                <button type="button" className="btn btn-close-white">
+                                    <link/>
+                                    <a href="/home" style={{textDecoration: "none"}}>
+                                        TRANG CHỦ
+                                    </a>
+                                </button>
+                            </div>
+                            <div style={{marginLeft: 30}}>
+                                <button type="button" className="btn btn-close-white">
+                                    <a href="/employee" style={{textDecoration: "none"}}>
+                                        NHÂN VIÊN
+                                    </a>
+                                </button>
+                            </div>
+                            <div style={{marginLeft: 30}}>
+                                <button type="button" className="btn btn-close-white">
+                                    <NavLink to='/customer'>Khách hàng</NavLink>
+                                    <Routes>
+                                        <Route path='/customer' element={<Customer/>}/>
+                                    </Routes>
+                                </button>
+                            </div>
+                            <div style={{marginLeft: 30}}>
+                                <button type="button" className="btn btn-close-white">
+                                    <a href="/facility" style={{textDecoration: "none"}}>
+                                        DỊCH VỤ
+                                    </a>
+                                </button>
+                            </div>
+                            <div style={{marginLeft: 30}}>
+                                <button type="button" className="btn btn-close-white">
+                                    <a href="/contract" style={{textDecoration: "none"}}>
+                                        HỢP ĐỒNG
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                        <div className="col-lg-3">
+                            <form className="d-flex" method="get">
+                                <button className="btn btn-close-white">Đăng kí</button>
+                                <button className="btn btn-close-white">Đăng nhập</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
 
-class Home extends Component {
-    render() {
-        return (
-            <div id="container">
-                <div className="navbar">
-                    <img src="../../../image/pngwing.11com.png" className="logo"/>
-                    <a style={{color: "#cccccc", textTransform: "uppercase", fontSize: 22}}>
-                        Furama Resort
-                    </a>
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="">Home</a>
-                            </li>
-                            <li>
-                                <a href="">Customer</a>
-                            </li>
-                            <li>
-                                <a href="">Service</a>
-                            </li>
-                            <li>
-                                <a href="">Contract</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <img src="../../../image/pngwing.com.png" className="menu-icon"/>
-                </div>
-                <div className="row">
-                    <div className="col">
-                        <h1>FURAMA RESORT ĐÀ NẴNG</h1>
-                        <p>Khu nghỉ dưỡng ẩm thực</p>
-                        <p></p>
-                        <p>Tọa lạc tại bãi biển Đà Nẵng</p>
-                        <p></p>
-                        <p>Một trong 6 bãi biển đẹp nhất thế giới</p>
+            <div style={{width: "100%", height: "30%"}}>
+                <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+                    <div className="carousel-inner">
+
+                        <div className="carousel-item active">
+                            <img
+                                src="https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                className="d-block w-100" alt="..."/>
+                        </div>
+
+                        <div className="carousel-item">
+                            <img
+                                src="https://images.pexels.com/photos/261204/pexels-photo-261204.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                className="d-block w-100" alt="..."/>
+                        </div>
+
+                        <div className="carousel-item">
+                            <img
+                                src="https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                className="d-block w-100" alt="..."/>
+                        </div>
+
                     </div>
-                    <div className="col">
-                        <div className="card card1">
-                            <h5>Các loại phòng</h5>
-                            <p>196 phòng được thiết kế theo phong cách Việt Nam</p>
-                        </div>
-                        <div className="card card2">
-                            <h5>Trải nghiệm ẩm thực</h5>
-                            <p>Các món ăn truyền thống Việt Nam thơm ngon!</p>
-                        </div>
-                        <div className="card card3">
-                            <h5>Giải trí</h5>
-                            <p>???</p>
-                        </div>
-                        <div className="card card4">
-                            <h5>Sự kiện</h5>
-                            <p>???</p>
-                        </div>
-                    </div>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"/>
+                        <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"/>
+                        <span className="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
-        );
-    }
+        </>
+    )
 }
 
 export default Home;

@@ -1,63 +1,42 @@
-import {Component} from "react"
+import {Component} from "react";
 
-class Header extends Component{
-    render() {
-        return (
-            <div id="container">
-                <div className="navbar">
-                    <img src="../../../image/pngwing.11com.png" className="logo" />
-                    <a style={{ color: "#cccccc", textTransform: "uppercase", fontSize: 22 }}>
-                        Furama Resort
-                    </a>
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="">Home</a>
-                            </li>
-                            <li>
-                                <a href="">Customer</a>
-                            </li>
-                            <li>
-                                <a href="">Service</a>
-                            </li>
-                            <li>
-                                <a href="">Contract</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <img src="../../../image/pngwing.com.png" className="menu-icon" />
-                </div>
-                <div className="row">
-                    <div className="col">
-                        <h1>FURAMA RESORT ĐÀ NẴNG</h1>
-                        <p>Khu nghỉ dưỡng ẩm thực</p>
-                        <p></p>
-                        <p>Tọa lạc tại bãi biển Đà Nẵng</p>
-                        <p></p>
-                        <p>Một trong 6 bãi biển đẹp nhất thế giới</p>
+function Header() {
+    return (
+        <div className="row" style={{backgroundColor: "white", padding: 20}}>
+            <div className="col-lg-3">
+                <img src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png"
+                     style={{width: 100, marginLeft: 70}}/>
+            </div>
+
+            <div className="col-lg-9 pt-5">
+                <div className="row" style={{fontFamily: '"Times New Roman"'}}>
+                    <div className="col-lg-4">
+                         <span style={{textAlign: "center", color: "#1e2125"}}>
+                         <i className="fa-solid fa-location-dot"/>
+                         103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District,
+                         Danang City, Vietnam
+                         </span>
+                        <p>7,0 km from Danang Airport</p>
                     </div>
-                    <div className="col">
-                        <div className="card card1">
-                            <h5>Các loại phòng</h5>
-                            <p>196 phòng được thiết kế theo phong cách Việt Nam</p>
-                        </div>
-                        <div className="card card2">
-                            <h5>Trải nghiệm ẩm thực</h5>
-                            <p>Các món ăn truyền thống Việt Nam thơm ngon!</p>
-                        </div>
-                        <div className="card card3">
-                            <h5>Giải trí</h5>
-                            <p>???</p>
-                        </div>
-                        <div className="card card4">
-                            <h5>Sự kiện</h5>
-                            <p>???</p>
-                        </div>
+
+                    <div className="col-lg-5">
+                        <p style={{textAlign: "center", color: "#1e2125"}}>
+                            <i className="fa-solid fa-phone"/> 84-236-3847 333/888
+                            <br/>
+                            <i className="fa-solid fa-envelope"/> reservation@furamavietnam.com
+                        </p>
+                    </div>
+
+                    <div className="col-lg-3">
+                        <p style={{color: "#1e2125"}}>
+                            <i className="fa-solid fa-user"/>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
-        );
-    }
+    )
 }
+
 export default Header;
