@@ -1,17 +1,15 @@
-import {facility as data} from "../facility/data/facilityList"
 import React, {useState, useEffect} from "react";
-import {useNavigate} from "react-router-dom";
 import {facility} from "./data/facilityList";
 
 
 function FacilityList() {
     return (
         <>
-            <div>
-                <button className="ms-3 bd-blue-100">Thêm mới dịch vụ</button>
-            </div>
             <div className="p-3">
                 <h2 className="text-center fw-bold my-3">DANH SÁCH DỊCH VỤ</h2>
+                <div>
+                    <button className="ms-3 bd-blue-100">Thêm mới dịch vụ</button>
+                </div>
                 <table className="table table-bordered">
                     <thead>
                     <tr>

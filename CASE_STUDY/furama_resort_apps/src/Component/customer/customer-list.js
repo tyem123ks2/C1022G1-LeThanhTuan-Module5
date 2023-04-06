@@ -6,11 +6,14 @@ class CustomerList extends Component {
     render() {
         return (
             <>
-                <div>
-                    <NavLink className="ms-5 btn btn-bd-light" to='/customer-create'>Thêm mới khách hàng</NavLink>
-                </div>
+
                 <div className="p-3">
                     <h2 className="text-center fw-bold my-3">DANH SÁCH KHÁCH HÀNG</h2>
+                    <div>
+                        <NavLink className="btn btn-light" to='/customer-create'>
+                            <img src="https://img.icons8.com/cute-clipart/256/add-file.png" height="50" width="50"/>
+                            THÊM MỚI KHÁCH HÀNG </NavLink>
+                    </div>
                     <table className="table table-bordered">
                         <thead>
                         <tr>
@@ -102,8 +105,8 @@ class CustomerList extends Component {
                 </div>
             </>
 
-        );
+    );
     }
-}
+    }
 
-export default CustomerList;
+    export default CustomerList;

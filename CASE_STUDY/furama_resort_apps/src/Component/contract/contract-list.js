@@ -1,39 +1,51 @@
-import React, {Compoment} from "react";
+import React from "react";
+import {contract} from "./data/contractList";
 
-class ContractList extends Compoment {
-    render() {
-        return (
-            <>
-                <div className="p-3">
-                    <h2 className="text-center fw-bold my-3">DANH SÁCH HỢP ĐỒNG</h2>
-                    <table className="table table-bordered">
-                        <tbody>
-                        <tr>
-                            <th className="text-center">STT</th>
-                            <th>Tên dịch vụ</th>
-                            <th>Ngày bắt đầu</th>
-                            <th>Ngày kết thúc</th>
-                            <th>Tiền đặt cọc</th>
-                            <th>Tổng tiền</th>
-                            <th className="text-center">Các dịch vụ đi kèm</th>
-                        </tr>
-                        <tr>
-                            <td scope="row"/>
-                            <td/>
-                            <td/>
-                            <td/>
-                            <td/>
-                            <td/>
-                            <td/>
-                            <td/>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </>
+function ContractList() {
+    return (
+        <div>
+            <center>
+                <h1>DANH SÁCH HỢP ĐỒNG</h1>
+                <button className="btn btn-outline-primary">Thêm mới hợp đồng</button>
+            </center>
+            <table className="table table-light">
+                <thead>
+                <tr>
+                    <th>Stt</th>
+                    <th>Facility</th>
+                    <th>Customer</th>
+                    <th>Date Start</th>
+                    <th>Date End</th>
+                    <th>Deposit</th>
+                    <th>Total Money</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {
+                    contract.map((contractList, index) =>
+                        <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{contractList.facility.name}</td>
+                            <td>{contractList.customer.name}</td>
+                            <td>{contractList.dateStart}</td>
+                            <td>{contractList.dateEnd}</td>
+                            <td>{contractList.deposit}</td>
+                            <td>{contractList.totalMoney}</td>
+                            <td>
+                                <button className="btn btn-outline-secondary" style={{color: "blue"}}>Edit</button>
+                            </td>
+                            <td>
+                                <button className="btn btn-outline-secondary" style={{color: "red"}}>Delete</button>
+                            </td>
 
-        );
-    }
+                        </tr>
+                    )}
+                </tbody>
+            </table>
+        </div>
+    )
 }
 
 export default ContractList;

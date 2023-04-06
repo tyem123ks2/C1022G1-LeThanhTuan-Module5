@@ -13,16 +13,9 @@ export default class Navbar extends Component {
                         <div className="navbar-nav col-lg-8">
                             <div>
                                 <button type="button" className="btn btn-close-white">
-                                    <a href="/" style={{textDecoration: "none"}}>
+                                    <NavLink className="dropdown-item" to='/'>
                                         TRANG CHỦ
-                                    </a>
-                                </button>
-                            </div>
-                            <div style={{marginLeft: 30}}>
-                                <button type="button" className="btn btn-close-white">
-                                    <a href="../customer/customer-list" style={{textDecoration: "none"}}>
-                                        NHÂN VIÊN
-                                    </a>
+                                    </NavLink>
                                 </button>
                             </div>
                             <div style={{marginLeft: 30}}>
@@ -35,15 +28,15 @@ export default class Navbar extends Component {
                             <div style={{marginLeft: 30}}>
                                 <button type="button" className="btn btn-close-white">
                                     <NavLink className="dropdown-item" to='/facility-list'>
-                                        KHÁCH HÀNG
+                                        DỊCH VỤ
                                     </NavLink>
                                 </button>
                             </div>
                             <div style={{marginLeft: 30}}>
                                 <button type="button" className="btn btn-close-white">
-                                    <a href="/contract" style={{textDecoration: "none"}}>
+                                    <NavLink className="dropdown-item" to='/contract-list'>
                                         HỢP ĐỒNG
-                                    </a>
+                                    </NavLink>
                                 </button>
                             </div>
                         </div>
