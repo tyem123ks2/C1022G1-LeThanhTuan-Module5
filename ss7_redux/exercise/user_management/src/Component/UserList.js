@@ -1,17 +1,15 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getAllUser, deleteUser} from "../redux/action/userList";
-import {useNavigate} from 'react-router-dom'
 
 function UserList() {
-    const navigate = useNavigate();
-    const users = useSelector(state => state.users)
+    let users = useSelector(state => state.users)
     const dispatch = useDispatch();
     console.log(users)
 
     useEffect(() => {
         console.log("Error");
-        dispatch(getAllUser());
+        users = dispatch(getAllUser());
     }, []);
 
     return (
@@ -20,7 +18,7 @@ function UserList() {
             <table className='table'>
                 <thead>
                 <tr>
-                    <th scope='col'>Id</th>
+                    <th scope=                              'col'>Id</th>
                     <th scope='col'>Name</th>
                     <th scope='col'>Email</th>
                     <th scope='col'>Website</th>
