@@ -1,9 +1,40 @@
 import React, {Component} from "react";
+import * as Yup from "yup";
+import {Formik} from "formik";
 
 class FacilityCreate extends Component {
     render() {
         return (
             <>
+                <Formik initialValues={{
+                name: '',
+                area: '',
+                cost: '',
+                maxPeople: '',
+                standardRoom: '',
+                descriptionOtherCovenience: '',
+                poolArea: '',
+                numberOfFloors: '',
+                facilityFree: ''
+            }}
+                      validationSchema={Yup.object({
+                          name: Yup.string().required("Required"),
+                          dateOfBirth: Yup.string().required("Required"),
+                          gender: Yup.string().required("Required"),
+                          idCard: Yup.string().required("Required"),
+                          phoneNumber: Yup.string().required("Required"),
+                          email: Yup.string().email().required("Required"),
+                          address: Yup.string().required("Required"),
+                      })}
+                      onSubmit={(values, {setSubmitting}) => {
+                          //call API
+                          setTimeout(() => {
+                              console.log(values);
+                              setSubmitting(false);
+                              alert("Thêm mới thành công!")
+                          }, 500);
+                      }}
+            >
                 <h2 style={{textAlign: "center"}}>THÊM MỚI DỊCH VỤ</h2>
                 <div className="d-flex justify-content-center mt-3">
                     <form>
@@ -80,8 +111,8 @@ class FacilityCreate extends Component {
                 </div>
             </>
 
-        );
-    }
-}
+                );
+                }
+                }
 
-export default FacilityCreate;
+                export default FacilityCreate;

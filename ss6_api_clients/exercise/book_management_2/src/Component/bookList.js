@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {NavLink, useNavigate} from "react-router-dom";
 import * as bookService from "../Service/bookService"
 
@@ -18,6 +18,10 @@ function ShowList() {
         let result = await bookService.findAll()
         setBookList(result);
     };
+
+    function handleUpdate(id) {
+        navigate(`/edit/${id}`)
+    }
 
     return (
         <>
@@ -39,7 +43,9 @@ function ShowList() {
                                 <td>{book.title}</td>
                                 <td>{book.quantity}</td>
                                 <td>
-                                    <NavLink to={`edit/${book.id}`} className='btn btn-primary'>Edit</NavLink>
+                                    <button type='button'
+                                            className='btn btn-primary'
+                                            onClick={() => handleUpdate(book.id)} >Edit</button>
                                 </td>
                             <td>
                                     <button

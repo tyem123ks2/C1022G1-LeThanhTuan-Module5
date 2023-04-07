@@ -1,14 +1,9 @@
 {
   "book": [
     {
-      "title": "Tuan dep trai",
-      "quantity": 2,
-      "id": 9
-    },
-    {
-      "title": "tuandeptraivcl",
-      "quantity": 199,
-      "id": 11
+      "id": 11,
+      "title": "tuandeptraivcl2123123",
+      "quantity": 199
     },
     {
       "title": "tuandeptrai",
@@ -21,9 +16,14 @@
       "id": 13
     },
     {
-      "title": "jason",
-      "quantity": 333,
-      "id": 14
+      "title": "tuan qua dep trai",
+      "quantity": 12345,
+      "id": 15
+    },
+    {
+      "id": 16,
+      "title": "thangnam",
+      "quantity": 456
     }
   ]
 }

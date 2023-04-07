@@ -4,9 +4,9 @@ class CustomerEdit extends Component {
     render() {
         return (
             <>
-                <h1 style={{fontWeight: "bold", textAlign: "center"}}>
-                    CẬP NHẬT DỊCH VỤ KHÁCH HÀNG
-                </h1>
+                <h3 style={{fontWeight: "bold", textAlign: "center"}}>
+                    CẬP NHẬT THÔNG TIN KHÁCH KHÁCH HÀNG
+                </h3>
                 <div className="d-flex justify-content-center mt-3">
                     <form className="w-50 border border-2 border-success p-3 rounded">
                         <input type="hidden"/>

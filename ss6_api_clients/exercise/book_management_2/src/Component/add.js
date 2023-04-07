@@ -25,7 +25,7 @@ function Add() {
                         navigate("/");
                     };
                     add();
-                }}
+                    }}
             >
                 {({isSubmitting}) => (
                     <Form>

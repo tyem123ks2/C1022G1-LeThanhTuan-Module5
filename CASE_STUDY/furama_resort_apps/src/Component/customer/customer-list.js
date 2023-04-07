@@ -6,7 +6,6 @@ class CustomerList extends Component {
     render() {
         return (
             <>
-
                 <div className="p-3">
                     <h2 className="text-center fw-bold my-3">DANH SÁCH KHÁCH HÀNG</h2>
                     <div>
@@ -50,7 +49,7 @@ class CustomerList extends Component {
                                             </button>
                                         </td>
                                         <td>
-                                            <button type='button' className='btn btn-danger'>Delete</button>
+                                            <button type='button' className='btn btn-danger'>Xóa</button>
                                         </td>
                                     </tr>
                                 )

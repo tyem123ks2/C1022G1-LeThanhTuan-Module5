@@ -184,6 +184,9 @@
   transition: 0.2s;
 }
 
+.ErrorMessage {
+  color: red;
+}
 
 .third a:hover {
   color: #fff;
