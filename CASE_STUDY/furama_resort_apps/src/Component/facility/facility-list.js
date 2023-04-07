@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {facility} from "./data/facilityList";
+import {NavLink} from "react-router-dom";
 
 
 function FacilityList() {
@@ -8,7 +9,9 @@ function FacilityList() {
             <div className="p-3">
                 <h2 className="text-center fw-bold my-3">DANH SÁCH DỊCH VỤ</h2>
                 <div>
-                    <button className="ms-3 bd-blue-100">Thêm mới dịch vụ</button>
+                    <NavLink className="btn btn-light" to='/facility-create'>
+                        <img src="https://img.icons8.com/cute-clipart/256/add-file.png" height="50" width="50"/>
+                        THÊM MỚI DỊCH VỤ </NavLink>
                 </div>
                 <table className="table table-bordered">
                     <thead>
