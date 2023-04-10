@@ -1,7 +1,8 @@
-import React, {Component, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {NavLink, useNavigate} from "react-router-dom";
 import * as customerService from "../../Service/customerService"
-
+import CustomerModalDelete from "../modalDelete/deleteCustomer";
+import {findAll} from "../../Service/customerService";
 
 function CustomerList() {
     const [customerList, setCustomerList] = useState([]);
@@ -22,11 +23,12 @@ function CustomerList() {
         customerType()
     }, []);
 
-    const handleDelete = async (id) => {
-        await customerService.remove(id);
-        let result = await customerService.findAll()
-        setCustomerList(result);
-    };
+    const [deleteId, setDeleteId] = useState(0)
+    const [deleteName, setDeleteName] = useState("")
+    const getPropsDeleteCustomer = (id, name) => {
+        setDeleteId(id);
+        setDeleteName(name);
+    }
 
     function handleUpdate(id) {
         navigate(`/customer-edit/${id}`)
@@ -80,10 +82,12 @@ function CustomerList() {
                                         </button>
                                     </td>
                                     <td>
-                                        <button type="button" className="btn btn-danger" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
-                                                {/*// onClick={deleteId(customer.id, customer.name)}>*/}
-                                            Xóa
+                                        <button className="btn btn-outline-secondary" style={{color: "red"}}
+                                                type="button"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal"
+                                                onClick={() => getPropsDeleteCustomer(customer.id, customer.name)}>
+                                            Xoá
                                         </button>
                                     </td>
                                 </tr>
@@ -93,6 +97,7 @@ function CustomerList() {
                     </tbody>
                 </table>
             </div>
+            {/*Phân trang*/}
             <nav aria-label="Page navigation example">
                 <ul className="pagination">
                     <li className="page-item"><a className="page-link" href="#">Previous</a></li>
@@ -102,27 +107,17 @@ function CustomerList() {
                     <li className="page-item"><a className="page-link" href="#">Next</a></li>
                 </ul>
             </nav>
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
-                 aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Xóa khách hàng</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"/>
-                        </div>
-
-                        <div className="modal-body">Bạn có chắn chắn muốn xóa <span id="deleteName"
-                                                                                    className="text-danger fw-bold"/> không?
-                        </div>
-
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {/*<CustomerModalDelete*/}
+            {/*    id={deleteId}*/}
+            {/*    name={deleteName}*/}
+            {/*/>*/}
+            <CustomerModalDelete
+                id={deleteId}
+                name={deleteName}
+                getShowList = {() => {
+                    findAll();
+                }}
+            />
         </>
     );
 }

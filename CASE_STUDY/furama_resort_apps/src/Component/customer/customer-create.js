@@ -117,9 +117,7 @@ function CustomerCreate() {
                             <Field className='form-control' component="select" name="customerType">
                                 {
                                     customerTypeList.map((type) => (
-                                        <>
                                             <option key={type.id} value={type.id}>{type.name}</option>
-                                        </>
                                     ))
                                 }
                             </Field>

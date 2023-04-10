@@ -1,39 +1,6 @@
 {
   "customer": [
     {
-      "id": 1,
-      "name": "Tuấn siu đẹp trai",
-      "dateOfBirth": "2000-04-01",
-      "gender": "Nữ",
-      "idCard": "197434299",
-      "phone": "0359066323",
-      "email": "thanhtuan02051099@gmail.com",
-      "address": "Khe Sanh",
-      "customerType": "3"
-    },
-    {
-      "id": 2,
-      "name": "Lê Đức Nghĩa",
-      "dateOfBirth": "22/02/2003",
-      "gender": "Nữ",
-      "idCard": "888889999",
-      "phone": "01234589",
-      "email": "nghiaml@gmail.com",
-      "address": "Đà Nẵng",
-      "customerType": 2
-    },
-    {
-      "id": 3,
-      "name": "Lê Đức Nghĩa",
-      "dateOfBirth": "22/02/2003",
-      "gender": "Nữ",
-      "idCard": "888889999",
-      "phone": "01234589",
-      "email": "nghiaml@gmail.com",
-      "address": "Đà Nẵng",
-      "customerType": 2
-    },
-    {
       "id": 4,
       "name": "Lê Thanh Tuấn",
       "dateOfBirth": "2023-04-09",
@@ -52,7 +19,7 @@
       "phone": "0359066999",
       "email": "thihao0337@gmail.com",
       "address": "Khe sanh",
-      "customerType": "2",
+      "customerType": 2,
       "id": 5
     },
     {
@@ -62,19 +29,8 @@
       "idCard": "1974853215",
       "phone": "0359066333",
       "email": "thanhtuan02051011@gmail.com",
-      "address": "23 Nguyễn Hoàng, Đà Nẵng",
-      "customerType": "2",
-      "id": 6
-    },
-    {
-      "name": "Air Blade",
-      "dateOfBirth": "1111-11-11",
-      "gender": "Nam",
-      "idCard": "1974853215",
-      "phone": "0359066333",
-      "email": "thanhtuan02051011@gmail.com",
       "address": "Portugal",
-      "customerType": "2",
+      "customerType": 2,
       "id": 7
     },
     {
@@ -85,19 +41,30 @@
       "phone": "0359066333",
       "email": "thanhtuan02051011@gmail.com",
       "address": "Japan",
-      "customerType": "4",
+      "customerType": 4,
       "id": 8
     },
     {
-      "name": "Quân",
-      "dateOfBirth": "1895-12-10",
+      "name": "Air Blade",
+      "dateOfBirth": "2023-04-14",
       "gender": "Nam",
-      "idCard": "187956321",
-      "phone": "0359066111",
-      "email": "quanap@gmail.com",
-      "address": "Đà Nẵng",
-      "customerType": "3",
-      "id": 9
+      "idCard": "1974851243",
+      "phone": "0359066333",
+      "email": "thanhtuan02051011@gmail.com",
+      "address": "Portugal",
+      "customerType": 2,
+      "id": 11
+    },
+    {
+      "id": 12,
+      "name": "Air Blade",
+      "dateOfBirth": "2023-04-09",
+      "gender": "Nam",
+      "idCard": "197485321",
+      "phone": "0359066333",
+      "email": "thanhtuan02051011@gmail.com",
+      "address": "Portugal",
+      "customerType": "1"
     }
   ],
   "customerType": [
