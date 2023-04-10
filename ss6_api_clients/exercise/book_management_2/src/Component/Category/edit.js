@@ -1,38 +1,37 @@
 import React, {useEffect, useState} from "react";
 import {Formik, Form, Field} from "formik";
 import {RotatingLines} from 'react-loader-spinner'
-import * as bookService from "../Service/bookService";
+import * as categoryService from "../../Service/categoryService"
 import {toast} from "react-toastify";
 import {useNavigate, useParams} from "react-router";
 
-function Edit() {
+function Edit1() {
     let navigate = useNavigate();
     const param = useParams();
-    const [book, setBook] = useState();
+    const [category, setCategory] = useState();
 
     useEffect(() => {
         const fetchApi = async () => {
-            const response = await bookService.detail(param.id)
-            setBook(response)
+            const response = await categoryService.detail(param.id)
+            setCategory(response)
         }
         fetchApi()
     }, [])
 
-    if (!book) {
-        return null
+    if (!category) {
+        return null;
     }
 
     return (
         <>
             <Formik
                 initialValues={{
-                    id: book?.id,
-                    title: book?.title,
-                    quantity: book?.quantity,
+                    id: category?.id,
+                    type: category?.type,
                 }}
                 onSubmit={(values, {setSubmitting}) => {
                     const edit = async () => {
-                        await bookService.edit(values)
+                        await categoryService.edit(values)
                         console.log(values);
                         setSubmitting(false);
                         toast("Edit successfully!!!");
@@ -44,14 +43,10 @@ function Edit() {
                 {({isSubmitting}) => (
                     <Form>
                         <h1>Edit</h1>
-                            <Field type='hidden' name="id"/>
+                        <Field type='hidden' name="id"/>
                         <div className="mb-3">
-                            <label htmlFor="title" className='form-label'>Title</label>
-                            <Field id="title" name="title"/>
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="quantity" className='form-label'>Quantity</label>
-                            <Field type="number" id="quantity" name="quantity"/>
+                            <label htmlFor="type" className='form-label'>Type</label>
+                            <Field id="type" name="type"/>
                         </div>
                         {
                             isSubmitting ?
@@ -71,4 +66,4 @@ function Edit() {
     );
 }
 
-export default Edit;
+export default Edit1;

@@ -2,8 +2,8 @@
   "book": [
     {
       "id": 11,
-      "title": "tuandeptraivcl2123123",
-      "quantity": 199
+      "title": "tuandeptraivcl2",
+      "quantity": 1991
     },
     {
       "title": "tuandeptrai",
@@ -24,6 +24,20 @@
       "id": 16,
       "title": "thangnam",
       "quantity": 456
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "type": "Tâm lý học"
+    },
+    {
+      "id": 2,
+      "type": "Toán học"
+    },
+    {
+      "id": 3,
+      "type": "Lịch sử"
     }
   ]
 }
