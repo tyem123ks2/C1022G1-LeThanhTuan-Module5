@@ -1,12 +1,17 @@
 import React from "react";
 import {contract} from "./data/contractList";
+import {NavLink} from "react-router-dom";
 
 function ContractList() {
     return (
         <div>
             <center>
                 <h1>DANH SÁCH HỢP ĐỒNG</h1>
-                <button className="btn btn-outline-primary">Thêm mới hợp đồng</button>
+                <div>
+                    <NavLink className="btn btn-light" to='/contract-create'>
+                        <img src="https://img.icons8.com/cute-clipart/256/add-file.png" height="50" width="50"/>
+                        THÊM MỚI HỢP ĐỒNG </NavLink>
+                </div>
             </center>
             <table className="table table-light">
                 <thead>
@@ -18,7 +23,6 @@ function ContractList() {
                     <th>Date End</th>
                     <th>Deposit</th>
                     <th>Total Money</th>
-                    <th>Edit</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
@@ -33,9 +37,6 @@ function ContractList() {
                             <td>{contractList.dateEnd}</td>
                             <td>{contractList.deposit}</td>
                             <td>{contractList.totalMoney}</td>
-                            <td>
-                                <button className="btn btn-outline-secondary" style={{color: "blue"}}>Edit</button>
-                            </td>
                             <td>
                                 <button className="btn btn-outline-secondary" style={{color: "red"}}>Delete</button>
                             </td>

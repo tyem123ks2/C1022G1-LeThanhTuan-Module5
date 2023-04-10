@@ -50,7 +50,8 @@ function FacilityList() {
                                     <td>{value.facilityType.name}</td>
                                     <td>
                                         <button type='button' className='btn btn-warning ms2'
-                                                >Edit
+                                        >
+                                            <NavLink to='/facility-edit'>Sửa</NavLink>
                                         </button>
                                     </td>
                                     <td>
