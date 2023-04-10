@@ -45,7 +45,7 @@ function ShowList() {
                                 <td>
                                     <button type='button'
                                             className='btn btn-primary'
-                                            onClick={() => handleUpdate(book.id)} >Edit</button>
+                                            onClick={() => handleUpdate(book.id)}   >Edit</button>
                                 </td>
                             <td>
                                     <button

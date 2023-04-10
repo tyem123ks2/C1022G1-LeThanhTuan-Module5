@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import {facility} from "./data/facilityList";
 import {NavLink} from "react-router-dom";
 
 
@@ -33,34 +32,34 @@ function FacilityList() {
                     </tr>
                     </thead>
                     <tbody>
-                    {
-                        facility.map((value, index) => (
-                                <tr key={index}>
-                                    <td>{index}</td>
-                                    <td>{value.name}</td>
-                                    <td>{value.area}</td>
-                                    <td>{value.cost}</td>
-                                    <td>{value.maxPeople}</td>
-                                    <td>{value.standardRoom}</td>
-                                    <td>{value.descriptionOtherCovenience}</td>
-                                    <td>{value.poolArea}</td>
-                                    <td>{value.numberOfFloors}</td>
-                                    <td>{value.facilityFree}</td>
-                                    <td>{value.rentType.name}</td>
-                                    <td>{value.facilityType.name}</td>
-                                    <td>
-                                        <button type='button' className='btn btn-warning ms2'
-                                        >
-                                            <NavLink to='/facility-edit'>Sửa</NavLink>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button type='button' className='btn btn-danger'>Delete</button>
-                                    </td>
-                                </tr>
-                            )
-                        )
-                    }
+                    {/*{*/}
+                    {/*    facility.map((value, index) => (*/}
+                    {/*            <tr key={index}>*/}
+                    {/*                <td>{index}</td>*/}
+                    {/*                <td>{value.name}</td>*/}
+                    {/*                <td>{value.area}</td>*/}
+                    {/*                <td>{value.cost}</td>*/}
+                    {/*                <td>{value.maxPeople}</td>*/}
+                    {/*                <td>{value.standardRoom}</td>*/}
+                    {/*                <td>{value.descriptionOtherCovenience}</td>*/}
+                    {/*                <td>{value.poolArea}</td>*/}
+                    {/*                <td>{value.numberOfFloors}</td>*/}
+                    {/*                <td>{value.facilityFree}</td>*/}
+                    {/*                <td>{value.rentType.name}</td>*/}
+                    {/*                <td>{value.facilityType.name}</td>*/}
+                    {/*                <td>*/}
+                    {/*                    <button type='button' className='btn btn-warning ms2'*/}
+                    {/*                    >*/}
+                    {/*                        <NavLink to='/facility-edit'>Sửa</NavLink>*/}
+                    {/*                    </button>*/}
+                    {/*                </td>*/}
+                    {/*                <td>*/}
+                    {/*                    <button type='button' className='btn btn-danger'>Delete</button>*/}
+                    {/*                </td>*/}
+                    {/*            </tr>*/}
+                    {/*        )*/}
+                    {/*    )*/}
+                    {/*}*/}
                     </tbody>
                 </table>
             </div>

@@ -1,0 +1,261 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Tuấn siu đẹp trai",
+      "dateOfBirth": "2000-04-01",
+      "gender": "Nữ",
+      "idCard": "197434299",
+      "phone": "0359066323",
+      "email": "thanhtuan02051099@gmail.com",
+      "address": "Khe Sanh",
+      "customerType": "3"
+    },
+    {
+      "id": 2,
+      "name": "Lê Đức Nghĩa",
+      "dateOfBirth": "22/02/2003",
+      "gender": "Nữ",
+      "idCard": "888889999",
+      "phone": "01234589",
+      "email": "nghiaml@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": 2
+    },
+    {
+      "id": 3,
+      "name": "Lê Đức Nghĩa",
+      "dateOfBirth": "22/02/2003",
+      "gender": "Nữ",
+      "idCard": "888889999",
+      "phone": "01234589",
+      "email": "nghiaml@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": 2
+    },
+    {
+      "id": 4,
+      "name": "Lê Thanh Tuấn",
+      "dateOfBirth": "2023-04-09",
+      "gender": "Nữ",
+      "idCard": "1974853215",
+      "phone": "0905423362",
+      "email": "thanhtuan02051011@gmail.com",
+      "address": "Khe Sanh",
+      "customerType": 2
+    },
+    {
+      "name": "Tuấn đẹp trai",
+      "dateOfBirth": "1999-11-10",
+      "gender": "Nam",
+      "idCard": "197878787",
+      "phone": "0359066999",
+      "email": "thihao0337@gmail.com",
+      "address": "Khe sanh",
+      "customerType": "2",
+      "id": 5
+    },
+    {
+      "name": "Air Blade",
+      "dateOfBirth": "1111-11-11",
+      "gender": "Nam",
+      "idCard": "1974853215",
+      "phone": "0359066333",
+      "email": "thanhtuan02051011@gmail.com",
+      "address": "23 Nguyễn Hoàng, Đà Nẵng",
+      "customerType": "2",
+      "id": 6
+    },
+    {
+      "name": "Air Blade",
+      "dateOfBirth": "1111-11-11",
+      "gender": "Nam",
+      "idCard": "1974853215",
+      "phone": "0359066333",
+      "email": "thanhtuan02051011@gmail.com",
+      "address": "Portugal",
+      "customerType": "2",
+      "id": 7
+    },
+    {
+      "name": "Silver Fang",
+      "dateOfBirth": "1985-09-19",
+      "gender": "Nữ",
+      "idCard": "1978454123",
+      "phone": "0359066333",
+      "email": "thanhtuan02051011@gmail.com",
+      "address": "Japan",
+      "customerType": "4",
+      "id": 8
+    },
+    {
+      "name": "Quân",
+      "dateOfBirth": "1895-12-10",
+      "gender": "Nam",
+      "idCard": "187956321",
+      "phone": "0359066111",
+      "email": "quanap@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": "3",
+      "id": 9
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "facility": [
+    {
+      "id": 1,
+      "name": "Hồ bơi",
+      "area": 100,
+      "cost": 50,
+      "maxPeople": 5,
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "rentType": {
+        "id": 1,
+        "name": "VND"
+      },
+      "standardRoom": "Twin bedroom",
+      "description": "Tốt",
+      "poolArea": 50,
+      "numberOfFloors": 3,
+      "facilityFree": "đồ bơi, kính bơi",
+      "status": false
+    },
+    {
+      "id": 2,
+      "name": "Bơi lội",
+      "area": 100,
+      "cost": 50,
+      "maxPeople": 20,
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "rentType": {
+        "id": 1,
+        "name": "VND"
+      },
+      "standardRoom": "Twin bedroom",
+      "description": "Tốt",
+      "poolArea": 50,
+      "numberOfFloors": 3,
+      "facilityFree": "đồ bơi, kính bơi",
+      "status": false
+    },
+    {
+      "id": 3,
+      "name": "Bơi lội",
+      "area": 100,
+      "cost": 50,
+      "maxPeople": 20,
+      "facilityType": {
+        "id": 2,
+        "name": "House"
+      },
+      "rentType": {
+        "id": 1,
+        "name": "VND"
+      },
+      "standardRoom": "Twin bedroom",
+      "description": "Tốt",
+      "poolArea": 50,
+      "numberOfFloors": 3,
+      "facilityFree": "đồ bơi, kính bơi",
+      "status": false
+    }
+  ],
+  "facilityType": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "VNĐ"
+    },
+    {
+      "id": 2,
+      "name": "USD"
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "facility": {
+        "id": 1,
+        "name": "Bơi lội"
+      },
+      "customer": {
+        "id": 1,
+        "name": "Lê Thanh Tuấn"
+      },
+      "dateStart": "02/02/2020",
+      "dateEnd": "03/03/2021",
+      "deposit": 3000,
+      "totalMoney": 5000
+    },
+    {
+      "id": 2,
+      "facility": {
+        "id": 1,
+        "name": "Bơi lội"
+      },
+      "customer": {
+        "id": 1,
+        "name": "Trần Bá Tài"
+      },
+      "dateStart": "02/02/2020",
+      "dateEnd": "03/03/2021",
+      "deposit": 3000,
+      "totalMoney": 5000
+    },
+    {
+      "id": 3,
+      "facility": {
+        "id": 1,
+        "name": "Bơi lội"
+      },
+      "customer": {
+        "id": 1,
+        "name": "Lê Thanh Tuấn"
+      },
+      "dateStart": "02/02/2020",
+      "dateEnd": "03/03/2021",
+      "deposit": 3000,
+      "totalMoney": 5000
+    }
+  ]
+}

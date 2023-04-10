@@ -11,7 +11,7 @@ export const findAll = async () => {
 
 export const save = async (book) => {
     try {
-        await axios.post(`http://localhost:3002/book/`, {...book})
+            await axios.post(`http://localhost:3002/book/`, {...book})
     } catch (error) {
         console.log(error)
     }

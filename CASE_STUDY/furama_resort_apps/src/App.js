@@ -13,6 +13,7 @@ import FacilityEdit from "./Component/facility/facility-edit";
 import FacilityCreate from "./Component/facility/facility-create";
 import ContractCreate from "./Component/contract/contract-create";
 import ContractList from "./Component/contract/contract-list";
+import Home from "./Component/layout/home";
 
 function App() {
     return (
@@ -21,12 +22,13 @@ function App() {
                 <Header/>
                 <Navbar/>
                 <Routes>
-                    <Route path='/facility-list' element={<FacilityList/>}/>
+                    <Route path='/' element={<Home/>}/>
+                    <Route path='/facility-list/' element={<FacilityList/>}/>
                     <Route path='/facility-edit' element={<FacilityEdit/>}/>
                     <Route path='/facility-create' element={<FacilityCreate/>}/>
                     <Route path='/customer-list' element={<CustomerList/>}/>
                     <Route path='/customer-create' element={<CustomerCreate/>}/>
-                    <Route path='/customer-edit' element={<CustomerEdit/>}/>
+                    <Route path='/customer-edit/:id' element={<CustomerEdit/>}/>
                     <Route path='/contract-create' element={<ContractCreate/>}/>
                     <Route path='/contract-list' element={<ContractList/>}/>
                 </Routes>

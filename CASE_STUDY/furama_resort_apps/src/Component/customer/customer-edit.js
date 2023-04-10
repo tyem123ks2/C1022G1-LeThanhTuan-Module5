@@ -5,9 +5,25 @@ import "react-toastify/dist/ReactToastify.css";
 import {Oval, RotatingLines} from "react-loader-spinner";
 import {Link, useNavigate, useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
+import * as customerService from "../../Service/customerService"
+import customerTypeList from "../../data/customerType";
 
 function CustomerEdit() {
+    let navigate = useNavigate();
+
+    const param = useParams();
+
     const [customer, setCustomer] = useState();
+    useEffect(() => {
+        const fetchApi = async () => {
+            const response = await customerService.detail(param.id)
+            setCustomer(response)
+        }
+        fetchApi();
+    }, [])
+    if (!customer) {
+        return null
+    }
     return (
         <>
             <Formik
@@ -17,27 +33,19 @@ function CustomerEdit() {
                     dateOfBirth: customer?.dateOfBirth,
                     gender: customer?.gender,
                     idCard: customer?.idCard,
-                    phoneNumber: customer?.phoneNumber,
+                    phone: customer?.phone,
                     email: customer?.email,
-                    customerType: customer?.customerType.name,
                     address: customer?.address,
+                    customerType: customer?.customerType.name
                 }}
                 validationSchema={Yup.object({
                     name: Yup.string()
-                        .required("required")
-                        .matches(
-                            "^[A-Z][a-z]+(\\s[A-Z][a-z]+)*$",
-                            "Tên không được chứa số. Và các kí tự đầu tiên của mỗi từ phải viết hoa"
-                        ),
+                        .required("required"),
                     email: Yup.string()
                         .required("required")
                         .email(),
-                    phoneNumber: Yup.string()
-                        .required("required")
-                        .matches(
-                            "^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[\\d]{7}$",
-                            "Số điện thoại phải đúng định dạng 090xxxxxxx hoặc 091xxxxxxx hoặc (84)+90xxxxxxx hoặc (84)+91xxxxxxx."
-                        ),
+                    phone: Yup.string()
+                        .required("required"),
                     idCard: Yup.string()
                         .required("Trường này bắt buộc nhập")
                         .matches(
@@ -46,9 +54,14 @@ function CustomerEdit() {
                         ),
                 })}
                 onSubmit={(values, {setSubmitting}) => {
-                    console.log(values);
-                    setSubmitting(false);
-                    toast("Thêm mới thành công");
+                    const edit = async () => {
+                        await customerService.edit(values)
+                        console.log(values);
+                        setSubmitting(false);
+                        toast("Thêm mới thành công");
+                        navigate("/customer-list")
+                    };
+                    edit();
                 }}
             >
                 {({isSubmitting}) => (
@@ -70,13 +83,13 @@ function CustomerEdit() {
                             <div className='form-check form-check-inline'>
                                 <Field className='form-check-input' type='radio' id='rd-1'
                                        name='gender'
-                                       value='1'/>
+                                       value='Nam'/>
                                 <label className='form-check-label' htmlFor='rd-1'>Nam</label>
                             </div>
                             <div className='form-check form-check-inline'>
                                 <Field className='form-check-input' type='radio' id='rd-2'
                                        name='gender'
-                                       value='0'/>
+                                       value='Nữ'/>
                                 <label className='form-check-label' htmlFor='rd-2'>Nữ</label>
                             </div>
                             <ErrorMessage name='gender' component='span' className='form-err text-danger'/>
@@ -90,10 +103,10 @@ function CustomerEdit() {
                         </div>
                         <div className="col-md-6">
                             <div className="mb-3">
-                                <label htmlFor="phoneNumber" className="form-label">Số điện thoại</label>
+                                <label htmlFor="phone" className="form-label">Số điện thoại</label>
                                 <Field type='text' className='form-control' id='phoneNumber'
-                                       name='phoneNumber'/>
-                                <ErrorMessage name='phoneNumber' component='span'
+                                       name='phone'/>
+                                <ErrorMessage name='phone' component='span'
                                               className='form-err text-danger'/>
                             </div>
                         </div>
@@ -111,17 +124,17 @@ function CustomerEdit() {
                                 <ErrorMessage name='address' component='span' className='form-err text-danger'/>
                             </div>
                         </div>
-                        <div className="item">
-                            <label htmlFor="typeId">Loại khách</label>
-                            <Field as="select" name="typeId">
-                                <option value="1">Kim Cương</option>
-                                <option value="2">Vàng</option>
-                                <option value="3">Bạch Kim</option>
+                        <div className="mb-3">
+                            <label htmlFor="customerType" className="form-label">Loại khách hàng:</label>
+                            <Field className='form-control' component="select" name="customerType">
+                                {
+                                    customerTypeList.map((type) => (
+                                        <>
+                                            <option key={type.id} value={type.id}>{type.name}</option>
+                                        </>
+                                    ))
+                                }
                             </Field>
-                        </div>
-                        <div className="item">
-                            <label htmlFor="address">Địa chỉ</label>
-                            <Field type="text" name="address" id="address"/>
                         </div>
                         <div className="btn-block">
                             {isSubmitting ? (
