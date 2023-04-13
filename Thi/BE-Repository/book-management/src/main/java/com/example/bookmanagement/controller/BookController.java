@@ -23,11 +23,11 @@ public class BookController {
         return bookService.findByName(name, pageable);
     }
 
-    @ResponseStatus(HttpStatus.OK)
-    @GetMapping("")
-    public BookDTO bookDetail(@RequestParam(required = false) int id) {
-        return bookService.findById(id);
-    }
+//    @ResponseStatus(HttpStatus.OK)
+//    @GetMapping("")
+//    public BookDTO bookDetail(@RequestParam(required = false) int id) {
+//        return bookService.findById(id);
+//    }
 
 
 }

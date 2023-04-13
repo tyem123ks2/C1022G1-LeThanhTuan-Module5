@@ -6,16 +6,16 @@ import {NavLink} from "react-router-dom";
 function BookList() {
     const [bookList, setBookList] = useState([]);
     const [categoryList, setCategoryList] = useState([]);
-
+    const showAllBooks = async () => {
+        const response = await bookService.getAllBooks();
+        setBookList(response.content);
+        console.log(response.content)
+    }
+    const showAllCategory = async () => {
+        const response = await categoryService.getAllCategory();
+        setCategoryList(response);
+    }
     useEffect(() => {
-        const showAllBooks = async () => {
-            const response = await bookService.getAllBooks();
-            setBookList(response);
-        }
-        const showAllCategory = async () => {
-            const response = await categoryService.getAllCategory();
-            setCategoryList(response);
-        }
         showAllBooks()
         showAllCategory()
     }, [])
@@ -48,10 +48,8 @@ function BookList() {
                                     <td>{index + 1}</td>
                                     <td>{book.codeBook}</td>
                                     <td>{book.name}</td>
-                                    <td>{categoryList.filter(categoryId => (
-                                        categoryId.id === book.category
-                                    ))[0]?.name}</td>
-                                    <td>{book.date}</td>
+                                    <td>{book.category.name}</td>
+                                    <td>{book.loanDay}</td>
                                     <td>{book.quantity}</td>
                                 </tr>
                             )

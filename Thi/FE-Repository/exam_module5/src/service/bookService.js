@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 export const getAllBooks = async () => {
-    return (await axios.get(`http://localhost:3003/books`)).data;
+    return (await axios.get(`http://localhost:8080/books`)).data;
 }
 
 export const getBookId = async (id) => {
