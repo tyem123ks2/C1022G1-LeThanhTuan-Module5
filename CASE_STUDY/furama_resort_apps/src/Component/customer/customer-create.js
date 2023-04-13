@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import {RotatingLines} from 'react-loader-spinner'
 import {useNavigate} from "react-router";
 import * as customerService from "../../Service/customerService"
-import {toast} from "react-toastify";
 
 function CustomerCreate() {
     const navigate = useNavigate();
@@ -19,6 +18,8 @@ function CustomerCreate() {
     useEffect(() => {
         getCustomerTypeList();
     }, []);
+
+
     return (
         <>
             <Formik initialValues={{
@@ -44,9 +45,12 @@ function CustomerCreate() {
                         //call API
                         const add = async () => {
                             console.log(values);
-                            await customerService.save(values);
+                            await customerService.save({
+                                ...values,
+                                customerType: +values.customerType
+                            });
                             setSubmitting(false);
-                            toast("Thêm mới khách hàng thành công!")
+                            alert("Thêm mới khách hàng thành công!")
                             navigate("/customer-list")
                         };
                         add();
@@ -113,7 +117,7 @@ function CustomerCreate() {
                             </div>
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="address" className="form-label">Loại khách hàng:</label>
+                            <label htmlFor="customerType" className="form-label">Loại khách hàng:</label>
                             <Field className='form-control' component="select" name="customerType">
                                 {
                                     customerTypeList.map((type) => (
@@ -128,7 +132,7 @@ function CustomerCreate() {
                                     strokeColor='grey'
                                     strokeWidth='5'
                                     animationDuration='0.75'
-                                    width='50'
+                                    width='5'
                                     visible={true}
                                 /> :
                                 <div className="col-6">

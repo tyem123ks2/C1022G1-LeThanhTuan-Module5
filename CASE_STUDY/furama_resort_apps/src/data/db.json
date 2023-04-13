@@ -1,70 +1,37 @@
 {
   "customer": [
     {
-      "id": 4,
-      "name": "Lê Thanh Tuấn",
-      "dateOfBirth": "2023-04-09",
+      "name": "Đức Nghĩa",
+      "dateOfBirth": "2200-01-17",
       "gender": "Nữ",
-      "idCard": "1974853215",
-      "phone": "0905423362",
-      "email": "thanhtuan02051011@gmail.com",
-      "address": "Khe Sanh",
-      "customerType": 2
-    },
-    {
-      "name": "Tuấn đẹp trai",
-      "dateOfBirth": "1999-11-10",
-      "gender": "Nam",
-      "idCard": "197878787",
-      "phone": "0359066999",
-      "email": "thihao0337@gmail.com",
-      "address": "Khe sanh",
+      "idCard": "197854824",
+      "phone": "0987874512",
+      "email": "ducnghia@gmail.com",
+      "address": "Đà Nẵng",
       "customerType": 2,
-      "id": 5
+      "id": 15
     },
     {
-      "name": "Air Blade",
-      "dateOfBirth": "1111-11-11",
-      "gender": "Nam",
-      "idCard": "1974853215",
-      "phone": "0359066333",
-      "email": "thanhtuan02051011@gmail.com",
-      "address": "Portugal",
-      "customerType": 2,
-      "id": 7
-    },
-    {
-      "name": "Silver Fang",
-      "dateOfBirth": "1985-09-19",
+      "name": "Công Định",
+      "dateOfBirth": "1999-06-19",
       "gender": "Nữ",
-      "idCard": "1978454123",
-      "phone": "0359066333",
-      "email": "thanhtuan02051011@gmail.com",
-      "address": "Japan",
-      "customerType": 4,
-      "id": 8
+      "idCard": "169874511",
+      "phone": "0987858413",
+      "email": "congdinh@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": 3,
+      "id": 16
     },
     {
-      "name": "Air Blade",
-      "dateOfBirth": "2023-04-14",
-      "gender": "Nam",
+      "name": "Ngọc Lan",
+      "dateOfBirth": "2004-02-22",
+      "gender": "Nữ",
       "idCard": "1974851243",
-      "phone": "0359066333",
-      "email": "thanhtuan02051011@gmail.com",
-      "address": "Portugal",
-      "customerType": 2,
-      "id": 11
-    },
-    {
-      "id": 12,
-      "name": "Air Blade",
-      "dateOfBirth": "2023-04-09",
-      "gender": "Nam",
-      "idCard": "197485321",
-      "phone": "0359066333",
-      "email": "thanhtuan02051011@gmail.com",
-      "address": "Portugal",
-      "customerType": "1"
+      "phone": "0698741225",
+      "email": "ngoclan@gmail.com",
+      "address": "Quảng Bình",
+      "customerType": 1,
+      "id": 17
     }
   ],
   "customerType": [
@@ -92,66 +59,17 @@
   "facility": [
     {
       "id": 1,
-      "name": "Hồ bơi",
-      "area": 100,
-      "cost": 50,
-      "maxPeople": 5,
-      "facilityType": {
-        "id": 1,
-        "name": "Villa"
-      },
-      "rentType": {
-        "id": 1,
-        "name": "VND"
-      },
-      "standardRoom": "Twin bedroom",
-      "description": "Tốt",
-      "poolArea": 50,
-      "numberOfFloors": 3,
-      "facilityFree": "đồ bơi, kính bơi",
-      "status": false
-    },
-    {
-      "id": 2,
       "name": "Bơi lội",
-      "area": 100,
-      "cost": 50,
-      "maxPeople": 20,
-      "facilityType": {
-        "id": 1,
-        "name": "Villa"
-      },
-      "rentType": {
-        "id": 1,
-        "name": "VND"
-      },
-      "standardRoom": "Twin bedroom",
-      "description": "Tốt",
-      "poolArea": 50,
-      "numberOfFloors": 3,
-      "facilityFree": "đồ bơi, kính bơi",
-      "status": false
-    },
-    {
-      "id": 3,
-      "name": "Bơi lội",
-      "area": 100,
-      "cost": 50,
-      "maxPeople": 20,
-      "facilityType": {
-        "id": 2,
-        "name": "House"
-      },
-      "rentType": {
-        "id": 1,
-        "name": "VND"
-      },
-      "standardRoom": "Twin bedroom",
-      "description": "Tốt",
-      "poolArea": 50,
-      "numberOfFloors": 3,
-      "facilityFree": "đồ bơi, kính bơi",
-      "status": false
+      "area": "300",
+      "cost": "300000",
+      "maxPeople": "4",
+      "standardRoom": "normal",
+      "description": "Điều hòa, Máy lạnh",
+      "poolArea": "30",
+      "numberOfFloors": "4",
+      "facilityFree": "Có lun thì sao",
+      "facilityType": 1,
+      "rentType": 1
     }
   ],
   "facilityType": [
@@ -181,44 +99,8 @@
   "contract": [
     {
       "id": 1,
-      "facility": {
-        "id": 1,
-        "name": "Bơi lội"
-      },
-      "customer": {
-        "id": 1,
-        "name": "Lê Thanh Tuấn"
-      },
-      "dateStart": "02/02/2020",
-      "dateEnd": "03/03/2021",
-      "deposit": 3000,
-      "totalMoney": 5000
-    },
-    {
-      "id": 2,
-      "facility": {
-        "id": 1,
-        "name": "Bơi lội"
-      },
-      "customer": {
-        "id": 1,
-        "name": "Trần Bá Tài"
-      },
-      "dateStart": "02/02/2020",
-      "dateEnd": "03/03/2021",
-      "deposit": 3000,
-      "totalMoney": 5000
-    },
-    {
-      "id": 3,
-      "facility": {
-        "id": 1,
-        "name": "Bơi lội"
-      },
-      "customer": {
-        "id": 1,
-        "name": "Lê Thanh Tuấn"
-      },
+      "facility": 1,
+      "customer": 13,
       "dateStart": "02/02/2020",
       "dateEnd": "03/03/2021",
       "deposit": 3000,

@@ -3,6 +3,8 @@ import {NavLink, useNavigate} from "react-router-dom";
 import * as customerService from "../../Service/customerService"
 import CustomerModalDelete from "../modalDelete/deleteCustomer";
 import {findAll} from "../../Service/customerService";
+import {toast} from "react-toastify";
+import ReactPaginate from "react-paginate";
 
 function CustomerList() {
     const [customerList, setCustomerList] = useState([]);
@@ -33,6 +35,17 @@ function CustomerList() {
     function handleUpdate(id) {
         navigate(`/customer-edit/${id}`)
     }
+
+    //State: Phục vụ cho việc phân trang (pagination)
+    const [paginationCustomer, setPaginationCustomer] = useState([]);
+    const PAGE_SIZE = 3;
+
+    useEffect(() => {
+        const pagination = async () => {
+            const result = await customerService.findAll();
+            setPaginationCustomer(result.slice(0,3));
+        };
+    }, []);
 
     return (
         <>
@@ -73,7 +86,7 @@ function CustomerList() {
                                     <td>{customer.email}</td>
                                     <td>{customer.address}</td>
                                     <td>{customerType.filter(customerId => (
-                                        customerId.id == customer.customerType
+                                        customerId.id === customer.customerType
                                     ))[0]?.name}</td>
                                     <td>
                                         <button type='button'
@@ -115,8 +128,18 @@ function CustomerList() {
                 id={deleteId}
                 name={deleteName}
                 getShowList = {() => {
+                    toast("Thêm mới thành công");
                     findAll();
                 }}
+            />
+            <ReactPaginate
+                breakLabel="..."
+                nextLabel="next >"
+                // onPageChange={handlePageClick}
+                pageRangeDisplayed={1}
+                pageCount={Math.floor(customerList.length / PAGE_SIZE)}
+                previousLabel="< previous"
+                renderOnZeroPageCount={null}
             />
         </>
     );

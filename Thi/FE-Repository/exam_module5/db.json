@@ -1,0 +1,174 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "codeBook": "BO-1234",
+      "name": "Sherlock Homes",
+      "category": 1,
+      "date": "10-11-1998",
+      "quantity": 3
+    },
+    {
+      "id": 2,
+      "codeBook": "BO-1111",
+      "name": "Three Kingdom",
+      "category": 2,
+      "date": "20-11-1997",
+      "quantity": 5
+    },
+    {
+      "id": 3,
+      "codeBook": "BO-8888",
+      "name": "The MickyWays",
+      "category": 3,
+      "date": "17-11-1994",
+      "quantity": 6
+    },
+    {
+      "codeBook": "BO-2222",
+      "name": "Tuấn đẹp trai",
+      "date": "1998-11-10",
+      "quantity": "5",
+      "category": 3,
+      "id": 4
+    },
+    {
+      "codeBook": "BO-2332",
+      "name": "Cristiano Ronaldo",
+      "date": "1998-05-08",
+      "quantity": "80",
+      "category": 2,
+      "id": 5
+    },
+    {
+      "codeBook": "BO-2229",
+      "name": "Air Blade",
+      "date": "2023-03-31",
+      "quantity": "5",
+      "category": 1,
+      "id": 6
+    },
+    {
+      "codeBook": "BO-2227",
+      "name": "Air Blade",
+      "date": "2023-04-09",
+      "quantity": "80",
+      "category": 2,
+      "id": 7
+    },
+    {
+      "codeBook": "BO-2222",
+      "name": "Air Blade",
+      "date": "2023-03-31",
+      "quantity": "87",
+      "category": 2,
+      "id": 8
+    },
+    {
+      "codeBook": "BO-3333",
+      "name": "Lê Thanh Tuấn",
+      "date": "2023-04-02",
+      "quantity": "52",
+      "category": 1,
+      "id": 9
+    },
+    {
+      "codeBook": "BO-9898",
+      "name": "GrandBlue",
+      "date": "2023-03-10",
+      "quantity": "802",
+      "category": 3,
+      "id": 10
+    },
+    {
+      "codeBook": "BO-2993",
+      "name": "House Princess 01",
+      "date": "2023-04-07",
+      "quantity": "522",
+      "category": 2,
+      "id": 11
+    },
+    {
+      "codeBook": "BO-3333",
+      "name": "Tuấn",
+      "date": "2023-04-07",
+      "quantity": "87",
+      "category": 2,
+      "id": 13
+    },
+    {
+      "codeBook": "BO-1132",
+      "name": "Lê Thanh Tuấn",
+      "date": "2023-04-01",
+      "quantity": "80",
+      "category": 3,
+      "id": 14
+    },
+    {
+      "codeBook": "BO-3333",
+      "name": "Air Blade",
+      "date": "2023-04-02",
+      "quantity": "5",
+      "category": 3,
+      "id": 15
+    },
+    {
+      "codeBook": "BO-9999",
+      "name": "The Playah",
+      "date": "2023-04-01",
+      "quantity": "80",
+      "category": 2,
+      "id": 16
+    },
+    {
+      "codeBook": "BO-7777",
+      "name": "The Sun",
+      "date": "2023-04-01",
+      "quantity": "80",
+      "category": 4,
+      "id": 17
+    },
+    {
+      "codeBook": "BO-2787",
+      "name": "Still Life",
+      "date": "2023-04-02",
+      "quantity": "51",
+      "category": 2,
+      "id": 18
+    },
+    {
+      "codeBook": "BO-2999",
+      "name": "House Princess 01",
+      "date": "2023-04-06",
+      "quantity": "111",
+      "category": 4,
+      "id": 19
+    },
+    {
+      "codeBook": "BO-2222",
+      "name": "Gerrard",
+      "date": "2023-04-08",
+      "quantity": "800",
+      "category": 3,
+      "id": 20
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Trinh thám"
+    },
+    {
+      "id": 2,
+      "name": "Lịch sử"
+    },
+    {
+      "id": 3,
+      "name": "Thiên văn học"
+    },
+    {
+      "id": 4,
+      "name": "Toán học"
+    }
+  ]
+}

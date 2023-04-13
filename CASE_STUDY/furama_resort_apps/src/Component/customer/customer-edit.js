@@ -22,7 +22,7 @@ function CustomerEdit() {
         fetchApi();
     }, [])
     if (!customer) {
-        return null
+        return null;
     }
     return (
         <>
@@ -36,7 +36,7 @@ function CustomerEdit() {
                     phone: customer?.phone,
                     email: customer?.email,
                     address: customer?.address,
-                    customerType: customer?.customerType.name
+                    customerType: customer?.customerType
                 }}
                 validationSchema={Yup.object({
                     name: Yup.string()
@@ -55,10 +55,13 @@ function CustomerEdit() {
                 })}
                 onSubmit={(values, {setSubmitting}) => {
                     const edit = async () => {
-                        await customerService.edit(values)
+                        await customerService.edit({
+                            ...values,
+                            customerType: +values.customerType
+                        })
                         console.log(values);
                         setSubmitting(false);
-                        toast("Thêm mới thành công");
+                        alert("Chỉnh sửa thành công");
                         navigate("/customer-list")
                     };
                     edit();

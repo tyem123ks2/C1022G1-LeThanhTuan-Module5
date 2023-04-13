@@ -3,12 +3,12 @@ import {toast} from 'react-toastify'
 import {useNavigate} from "react-router";
 
 function CustomerModalDelete(props) {
-
+    const navigate = useNavigate();
 
     const handleDelete = async (id) => {
         await customerService.remove(id)
-        toast("Xóa thành công");
-        props.getCustomerList();
+        toast("Xóa thành công!");
+        props.getShowList();
     };
     return (
         <>

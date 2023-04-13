@@ -1,23 +1,44 @@
-import React, {Component} from 'react';
+import React, {useEffect, useState} from 'react';
 import * as Yup from "yup";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import {RotatingLines} from "react-loader-spinner";
-import {toast} from "react-toastify";
+import {Link, useNavigate, useParams} from "react-router-dom";
+import * as facilityService from "../../Service/facilityService";
+import rentType from "../../data/rentType";
+import facilityType from "../../data/facilityType";
 
 function FacilityEdit() {
+    let navigate = useNavigate();
+
+    const param = useParams();
+
+    const [facility, setFacility] = useState();
+    useEffect(() => {
+        const fetchApi = async () => {
+            const response = await facilityService.detail(param.id)
+            setFacility(response)
+        }
+        fetchApi();
+    }, [])
+    if (!facility) {
+        return null;
+    }
     return (
         <>
             <Formik
                 initialValues={{
-                    name: '',
-                    area: '',
-                    cost: '',
-                    maxPeople: '',
-                    standardRoom: '',
-                    descriptionOtherCovenience: '',
-                    poolArea: '',
-                    numberOfFloors: '',
-                    facilityFree: ''
+                    id: facility?.id,
+                    name: facility?.name,
+                    area: facility?.area,
+                    cost: facility?.cost,
+                    maxPeople: facility?.maxPeople,
+                    standardRoom: facility?.standardRoom,
+                    description: facility?.description,
+                    poolArea: facility?.poolArea,
+                    numberOfFloors: facility?.numberOfFloors,
+                    facilityFree: facility?.facility,
+                    facilityType: facility?.facilityType,
+                    rentType: facility?.rentType,
                 }}
                 validationSchema={Yup.object({
                     name: Yup.string()
@@ -27,7 +48,7 @@ function FacilityEdit() {
                     cost: Yup.string().required("Vui lòng nhập thông tin vào đây"),
                     maxPeople: Yup.string().required("Vui lòng nhập thông tin vào đây"),
                     standardRoom: Yup.string().required("Vui lòng nhập thông tin vào đây"),
-                    descriptionOtherCovenience: Yup.string().required(
+                    description: Yup.string().required(
                         "Vui lòng nhập thông tin vào đây"
                     ),
                     poolArea: Yup.string()
@@ -43,10 +64,19 @@ function FacilityEdit() {
                         "Vui lòng nhập thông tin vào đây"
                     ),
                 })}
-                onSubmit={(values, { setSubmitting }) => {
-                    console.log(values);
-                    setSubmitting(false);
-                    toast('Thêm mới dịch vụ thành công!!')
+                onSubmit={(values, {setSubmitting}) => {
+                    const edit = async () => {
+                        await facilityService.edit({
+                            ...values,
+                            facilityType: +values.facilityType,
+                            rentType: +values.rentType
+                        });
+                        console.log(values);
+                        setSubmitting(false);
+                        alert("Chỉnh sửa thành công!");
+                        navigate("/facility-list")
+                    };
+                    edit();
                 }}
             >{({isSubmitting}) => (
                 <Form className='row g-3'
@@ -78,9 +108,9 @@ function FacilityEdit() {
                         <ErrorMessage name='standardRoom' component='span' className='form-err text-danger'/>
                     </div>
                     <div className="col-md-6">
-                        <label htmlFor="descriptionOtherCovenience" className="form-label">Mô tả tiện tích khác</label>
-                        <Field type='text' className='form-control' id='descriptionOtherCovenience' name='descriptionOtherCovenience'/>
-                        <ErrorMessage name='descriptionOtherCovenience' component='span' className='form-err text-danger'/>
+                        <label htmlFor="description" className="form-label">Mô tả tiện tích khác</label>
+                        <Field type='text' className='form-control' id='description' name='description'/>
+                        <ErrorMessage name='description' component='span' className='form-err text-danger'/>
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="poolArea" className="form-label">Diện tích hồ bơi</label>
@@ -98,37 +128,54 @@ function FacilityEdit() {
                         <ErrorMessage name='facilityFree' component='span' className='form-err text-danger'/>
                     </div>
                     <div className="mb-3">
-                        <label className="fs-5" htmlFor="">
-                            Loại dịch vụ:{" "}
-                        </label>
-                        <select className="form-select" aria-label="Default select example">
-                            <option value="">Diamond</option>
-                            <option value="">Platinium</option>
-                            <option value="">Gold</option>
-                            <option value="">Silver</option>
-                            <option value="">Member</option>
-                        </select>
+                        <label htmlFor="facilityType" className="form-label">Loại hình dịch vụ:</label>
+                        <Field className='form-control' component="select" name="facilityType">
+                            {
+                                facilityType.map((facilityType) => (
+                                    <>
+                                        <option key={facilityType.id}
+                                                value={facilityType.id}>{facilityType.name}</option>
+                                    </>
+                                ))
+                            }
+                        </Field>
                     </div>
-                    {
-                        isSubmitting ?
+                    <div className="mb-3">
+                        <label htmlFor="rentType" className="form-label">Loại hình thanh toán:</label>
+                        <Field className='form-control' component="select" name="rentType">
+                            {
+                                rentType.map((rentType) => (
+                                    <>
+                                        <option key={rentType.id} value={rentType.id}>{rentType.name}</option>
+                                    </>
+                                ))
+                            }
+                        </Field>
+                    </div>
+                    <div className="btn-block">
+                        {isSubmitting ? (
                             <RotatingLines
                                 strokeColor='grey'
                                 strokeWidth='5'
                                 animationDuration='0.75'
                                 width='50'
                                 visible={true}
-                            /> :
-                            <div className="col-6">
+                            />
+                        ) : (
+                            <>
                                 <button type="submit" className="btn btn-primary">
-                                    SỬA
+                                    Chỉnh sửa
                                 </button>
-                            </div>
-                    }
+                                <Link to="/facility-list" className="btn btn-primary">
+                                    Quay lại
+                                </Link>
+                            </>
+                        )}
+                    </div>
                 </Form>
             )}
             </Formik>
         </>
     )
 }
-
 export default FacilityEdit;

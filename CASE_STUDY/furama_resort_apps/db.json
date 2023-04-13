@@ -64,7 +64,7 @@
       "phone": "0359066333",
       "email": "thanhtuan02051011@gmail.com",
       "address": "23 Nguyễn Hoàng, Đà Nẵng",
-      "customerType": "",
+      "customerType": 1,
       "id": 5
     }
   ],
