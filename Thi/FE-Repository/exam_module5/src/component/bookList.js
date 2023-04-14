@@ -1,25 +1,36 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import * as bookService from "../service/bookService"
 import * as categoryService from "../service/categoryService"
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
+import BookModalDelete from "./deleteBookModal";
 
 function BookList() {
+    const navigate = useNavigate();
     const [bookList, setBookList] = useState([]);
     const [categoryList, setCategoryList] = useState([]);
-    const showAllBooks = async () => {
-        const response = await bookService.getAllBooks();
-        setBookList(response.content);
-        console.log(response.content)
-    }
-    const showAllCategory = async () => {
-        const response = await categoryService.getAllCategory();
-        setCategoryList(response);
-    }
-    useEffect(() => {
-        showAllBooks()
-        showAllCategory()
-    }, [])
 
+    const fetchApi = async () => {
+        const bookRes = await bookService.getAllBooks();
+        const categoryRes = await categoryService.getAllCategory();
+        setBookList(bookRes.content);
+        setCategoryList(categoryRes.content);
+    }
+
+    useEffect(() => {
+        fetchApi()
+    }, []);
+
+
+    function handleUpdate1(id) {
+        navigate(`/edit/${id}`);
+    }
+
+    const [deleteId, setDeleteId] = useState(0)
+    const [deleteName, setDeleteName] = useState("")
+    const getPropsDeleteBook = (id, name) => {
+        setDeleteId(id);
+        setDeleteName(name);
+    }
 
     return (
         <>
@@ -39,6 +50,8 @@ function BookList() {
                         <th className="text-center">Thể loại</th>
                         <th className="text-center">Ngày nhập sách</th>
                         <th className="text-center">Số lượng</th>
+                        <th className="text-center">Chỉnh sửa</th>
+                        <th className="text-center">Xóa</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -51,6 +64,21 @@ function BookList() {
                                     <td>{book.category.name}</td>
                                     <td>{book.loanDay}</td>
                                     <td>{book.quantity}</td>
+                                    <td>
+                                        <button type='button'
+                                                className='btn btn-primary'
+                                                onClick={() => handleUpdate1(book.id)}>Edit
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button className="btn btn-outline-secondary" style={{color: "red"}}
+                                                type="button"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal1"
+                                                onClick={() => getPropsDeleteBook(book.id, book.name)}>
+                                            Xoá
+                                        </button>
+                                    </td>
                                 </tr>
                             )
                         )
@@ -58,6 +86,13 @@ function BookList() {
                     </tbody>
                 </table>
             </div>
+            <BookModalDelete
+                id={deleteId}
+                name={deleteName}
+                getShowList = {() => {
+                    toast("Xóa thành công");
+                    fetchApi();
+                }} />
         </>
     )
 }

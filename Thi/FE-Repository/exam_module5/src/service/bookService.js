@@ -12,3 +12,12 @@ export const getBookId = async (id) => {
 export const createBooks = async (books) => {
     return await axios.post(`http://localhost:3003/books`, {...books});
 };
+
+export const remove = async (id) => {
+    try {
+        await axios.delete(`http://localhost:3003/books/${id}`)
+        alert("Xóa sách thành công!!")
+    } catch (e) {
+        console.log(e)
+    }
+}

@@ -17,7 +17,11 @@ public class Category {
     @Column(columnDefinition = "boolean default false")
     private boolean isDeleted = false;
 
+    public Category(int id) {
+    }
+
     public Category() {
+
     }
 
     public int getId() {
